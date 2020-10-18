@@ -58,7 +58,7 @@ def scrape():
         img_title.append(x.text)
 
     images = []
-    for x in img_url:
+    for x in img_title:
         browser.find_by_css('img.thumb').click()
         images.append(browser.find_by_text('Sample')['href'])
         browser.back()
