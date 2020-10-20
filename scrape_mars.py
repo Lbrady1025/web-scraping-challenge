@@ -43,6 +43,10 @@ def scrape():
     #Slice off other tables
     df = tables[0]
 
+    df = df.rename({'0':'Description','1':'Mars'})
+
+    df.reset_index()
+
     #Convert to HTML
     facts_table = df.to_html()
 
@@ -58,9 +62,11 @@ def scrape():
         img_title.append(x.text)
 
     images = []
+    counter=0
     for x in img_title:
-        browser.find_by_css('img.thumb').click()
+        browser.find_by_css('img.thumb')[counter].click()
         images.append(browser.find_by_text('Sample')['href'])
+        counter = counter+1
         browser.back()
 
     hemisphere_image_urls = []
@@ -68,5 +74,7 @@ def scrape():
     for x in title:
         hemisphere_image_urls.append({'title':img_title[counter],'img_url':images[counter]})
         counter = counter + 1
+
+    browser.quit()
     
     return {'headline':news_title,'article_detail':news_p,'feat_img':featured_image_url,'table':facts_table,'hemisphere_imgs':hemisphere_image_urls}
