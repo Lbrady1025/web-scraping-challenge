@@ -46,10 +46,14 @@
             <h3>Mars Hemispheres</h3>
             <div>
                 {% for x in mars_data.hemisphere_imgs: %}
+                <div class="col-sm-6">
                 <div class="card border-dark mb-3s">
+                    
                     <div class="card-body">
-                        <img class="col-md-8" src={{x.img_url}} alt="">
+                        <img class="col-md-12" src={{x.img_url}} alt="">
                         <div class="card-title" style="font-weight: bold;">{{x.title}}</div>
+                
+                    </div>
                     </div>
                 </div>
                 {% endfor %}
