@@ -1,6 +1,5 @@
-div .card-body {
-    margin:40px;
-    padding:40px;
+div .card {
+    margin-top: ($spacer * .25) !important;
     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -10,4 +9,11 @@ div .row {
 
 div .card-title {
     font-weight: bold;
+    padding-top:40px;
 }
+
+h3 {
+    margin:40px;
+    padding:40px;
+}
+
