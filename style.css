@@ -3,3 +3,11 @@ div .card-body {
     padding:40px;
     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
 }
+
+div .row {
+    padding:40px;
+}
+
+div .card-title {
+    font-weight: bold;
+}
